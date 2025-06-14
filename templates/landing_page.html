@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechAI Innovator - Personal Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-holder">
+            <div class="logo-placeholder"></div>
+            <div class="logo">TechAI<br>Innovator</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="hero">
+            <div class="intro">
+                <h1>Welcome to My World</h1>
+                <p>Explore my journey, skills, and expertise in technology.</p>
+            </div>
+        </div>
+
+        <div class="video-section">
+            <div class="video-scroll">
+                <div class="video-item">
+                    <video controls>
+                        <source src="video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-text">
+                        <h2>About Me - Video 1</h2>
+                        <p>Here, I will talk about my journey, background, and passion for technology. You can read below to explore everything I say in the video.</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                        <source src="video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-text">
+                        <h2>About Me - Video 2</h2>
+                        <p>Continuing with more insights and stories about my path into tech.</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                        <source src="video3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-text">
+                        <h2>About Me - Video 3</h2>
+                        <p>Highlighting key milestones and achievements in my career.</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                        <source src="video4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-text">
+                        <h2>About Me - Video 4</h2>
+                        <p>Future aspirations and goals in technology.</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                        <source src="video5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-text">
+                        <h2>About Me - Video 5</h2>
+                        <p>Sharing my thoughts on innovation and problem-solving in tech.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>My Services</h2>
+        <div class="service-list">
+            {% for service in services %}
+            <a href="/services-{{ service[0] }}" class="service">{{ service[1] }}</a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:example@techaiinnovator.com">example@techaiinnovator.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/1234567890" target="_blank">Message Me</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TechAI Innovator. All rights reserved.</p>
+    </footer>
+</body>
+
+<script src="/static/js/script.js"></script>
+
+</html>

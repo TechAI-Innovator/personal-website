@@ -1,0 +1,645 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo-holder {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+header nav {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+
+header nav ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+    color: #4facfe;
+    font-weight: 500;
+}
+
+.social-links {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    justify-content: right;
+}
+
+.social-links a {
+    color: blue;
+    text-decoration: solid;
+}
+
+.social-links a:hover {
+    color: #4facfe;
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(180deg, #00f2fe, #4facfe);
+    color: white;
+}
+
+.hero .intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Video Section */
+.video-section {
+    margin: 30px auto;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.video-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.video-service {
+    display: flex;
+    justify-content: center;
+}
+
+.service-video-text {
+    border: #333 1px solid;
+    width: 80%;
+    padding: 10px;
+    /* word-wrap: break-word; I can always come back here later if the service description does not make sense
+    overflow-wrap: break-word;
+    white-space: normal; */
+}
+
+.video-item {
+    flex: 0 0 450px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+video {
+    border-radius: 10px;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    padding: 15px;
+    text-align: center;
+    background: white;
+    color: #4facfe;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact a {
+    color: #4facfe;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 5px 5px;
+    }
+
+    .hero h1{
+        line-height: 40px;
+    }
+
+    .hero p  {
+        line-height: 20px;
+    }
+
+    .video-scroll {
+        max-height: 500px;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Key Features Section */
+.key-features {
+    padding: 30px 20px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    color: white;
+    text-align: center;
+}
+
+.key-features h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.key-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.key-features li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+.projects {
+    padding: 30px 20px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    color: #333;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.project-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.project {
+    margin: 20px auto;
+    max-width: 800px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px;
+    flex: 0 0 450px;
+    flex-direction: column;
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #4facfe;
+}
+
+.project-visual {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-visual img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-bottom: 3px solid yellow;
+    border-radius: 8px; /* Optional rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f4f4f4;
+}
+
+/*  if you want all images to have the same size but allow minor cropping. */
+/* .project-visual img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    border-radius: 8px;
+} */
+
+.project-visual img:hover {
+    transform: translateY(-5px) scale(1.05); /* Moves the image upward and zooms in slightly */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-details {
+    padding: 15px;
+    text-align: left;
+}
+
+.project-details p {
+    margin: 10px 0;
+}
+
+.project-details a {
+    color: #4facfe;
+    text-decoration: none;
+}
+
+.project-details a:hover {
+    text-decoration: underline;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 30px 20px;
+    background: linear-gradient(180deg, #4facfe, #00f2fe);
+    color: white;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.testimonials p {
+    font-size: 1rem;
+    margin: 10px auto;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 30px 20px;
+    background: #f4f4f9;
+    color: #333;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.faq p {
+    font-size: 1rem;
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+    .video-item-service {
+        display: flex;
+        max-height: 500px;
+        flex-direction: column;
+        width: 90%;
+
+    }
+
+    .project-list {
+        max-height: 600px;
+        flex-direction: column;
+        overflow-y: visible;
+        border: #333 0.5px solid;
+        border-radius: 8px;
+    }
+
+    .key-features h2, 
+    .projects h2, 
+    .testimonials h2, 
+    .faq h2 {
+        font-size: 1.6rem;
+    }
+
+    .key-features li, 
+    .testimonials p, 
+    .faq p, 
+    .project-details p {
+        font-size: 0.8rem;
+    }
+
+    .project-visual img {
+        max-width: 200px;
+    }
+
+    .project {
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .project h3 {
+        font-size: 1.2rem;
+    }
+}
+
+
+.highlight {
+    animation: highlight-border 1.0s ease-in-out, highlight-text 1.0s ease-in-out;
+}
+
+@keyframes highlight-border {
+    0% {
+        border: 5px solid #ffeb3b;
+    }
+    100% {
+        border: none;
+    }
+}
+
+@keyframes highlight-text {
+    0% {
+        color: #ffeb3b; /* Change text color to yellow */
+    }
+    100% {
+        color: inherit; /* Revert text color back to original */
+    }
+}
+
+
+.project-gallery {
+    text-align: center;
+    padding: 10px;
+    background: slategrey;
+}
+
+.image-gallery {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-flow: dense; /* Makes sure images shift into place efficiently */
+    justify-content: center;
+}
+
+/* Laptop images take up more space */
+.gallery-item.laptop {
+    grid-column: span 2; /* Takes 2 columns */
+    grid-row: span 1; /* Ensures it stays big */
+}
+
+/* Tablet images take slightly more space than phones */
+.gallery-item.tablet {
+    grid-column: span 1;
+}
+
+/* Phone images take the least space */
+.gallery-item.phone {
+    grid-column: span 1;
+}
+
+/* Make sure images maintain their original aspect ratio */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* RESPONSIVE GRID BEHAVIOR */
+
+/* For larger screens (laptops) */
+@media (min-width: 1024px) {
+    .image-gallery {
+        grid-template-columns: repeat(4, 1fr); /* 4 flexible columns */
+    }
+}
+
+/* For tablets */
+@media (max-width: 1024px) {
+    .image-gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 flexible columns */
+    }
+}
+
+/* For large phones */
+@media (max-width: 768px) {
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 flexible columns */
+    }
+}
+
+/* For small phones */
+@media (max-width: 480px) {
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-item.laptop, .gallery-item.tablet {
+        grid-column: span 2; /* Ensure bigger images span correctly */
+    }
+}
+
+
+
+
+/* For admin */
+h2, h3 {
+    color: #333;
+}
+
+.login {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+}
+
+.dashboard {
+    background: linear-gradient(to left, #4facfe, #00f2fe);
+    justify-content: center;
+    align-items: center;background-attachment: fixed;
+    text-align: center;
+    margin: 0, 20px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login, .dashboard {
+    animation: backgroundAnimate 10s infinite alternate;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(to right, #4facfe, #00f2fe);;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 300px;
+    transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.container:hover {
+    transform: scale(1.05);
+}
+
+/* Center the login form */
+.container form {
+    position: relative;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 300px;
+    transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.container form:hover, .dashboard form:hover {
+    transform: scale(1.05);
+}
+
+.dashboard form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input, select, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+button {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+}
+
+/* Logout Button */
+.logout {
+    display: inline-block;
+    background: #ff4b5c;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.logout:hover {
+    background: #d43f50;
+    color: #0056b3;
+}

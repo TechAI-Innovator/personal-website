@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        
+    </style>
+</head>
+
+<body class="dashboard">
+    <h2>Welcome, Admin</h2>
+    <a class="logout" href="/admin/logout">Logout</a>
+
+    <h3>Add New Service</h3>
+    <form method="POST" action="/admin/add-service">
+        <input type="text" name="service_name" placeholder="Service Name" required>
+        <textarea name="description" placeholder="Service Description"></textarea>
+        <button type='submit'>Add Service</button>
+    </form>
+
+    <h3>Add New Project</h3>
+    <form method="POST" action="/admin/add-project">
+        <input type="text" name="project_title" placeholder="Project Title" required>
+        <label>Choose your service type:</label>
+        <select name="service_id" id="service_id">
+            {% for service in services %}
+            <option value="{{ service[0] }}">{{ service[1] }}</option>
+            {% endfor %}
+        </select>
+        <textarea name="description" placeholder="Project Description"></textarea>
+        <input type="text" name="tools_used" placeholder="Tools Used (comma-separated)" required>
+        <input type="text" name="links" placeholder="Links (comma-separated)" required>
+        <button type='submit'>Add Project</button>
+    </form>
+
+    <h3>Upload Project Image</h3>
+    <form method="POST" action="/admin/upload-image" enctype="multipart/form-data">
+        <label>Choose your project title:</label>
+        <select name="project_id">
+            {% for project in projects %}
+            <option value="{{ project[0] }}">{{ project[1] }}</option>
+            {% endfor %}
+            </select>
+        <input type="file" name="image" required>
+        <button type='submit'>Upload Image</button>
+    </form>
+
+</body>
+</html>
+
+
+	
+	
+
+		

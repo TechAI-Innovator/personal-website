@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Display</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="project-gallery">
+        <h2>{{ project_name }}</h2>
+        
+        <div class="image-gallery">
+            {% for image in images %}
+            <div class="gallery-item {{ image.category }}">
+                <img src="{{ url_for('static', filename='images/' + image.filename) }}" alt="Gallery Image">
+            </div>
+            {% endfor %}
+        </div>
+    </section>      
+</body>
+</html>

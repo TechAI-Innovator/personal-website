@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-holder">
+            <div class="logo-placeholder"></div>
+            <div class="logo">TechAI<br>Innovator</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/index#about">About</a></li>
+                <li><a href="/index#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </header>
+
+    <section class="video-section">
+        <div class="video-service">
+            <div class="service-video-text">
+                <h2>Welcome to {{ service[1] }}</h2>
+                <p>{{ service[2] }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>Previous Projects</h2>
+        <div class="project-list">
+            {% for project in projects %}
+            <!-- Example Project -->
+            <div class="project">
+                
+                <h3>{{ project[1] }}</h3>
+                <div class="project-visual">
+                    <!-- The image acts as a link -->
+                    {% if project[0] in project_images and project_images[project[0]] %}
+                        <a href="/services-{{ project[2] }}/projects-{{ project[0] }}">
+                            <img src="{{ url_for('static', filename='images/' + project_images[project[0]]) }}" alt="Project Visualization">
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="project-details">
+                    <p><strong>Description:</strong> {{ project[3] }} </p>
+                    <p><strong>Tools Used:</strong> {{ project[4] }} </p>
+                    <p><strong>Link:</strong> <a href="{{ project[5] }}" target="_blank">GitHub Code</a></p>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </section>    
+
+    <!-- <section class="testimonials">
+        <h2>Testimonials</h2>
+        <p>"TechAI Innovator provided exceptional service. The project exceeded expectations." - Client A</p>
+        <p>"A pleasure to work with! Delivered on time and with great quality." - Client B</p>
+        <p>More testimonials coming soon!</p>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <p>Coming soon! This section will address common queries about [Service Name].</p>
+    </section> -->
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:example@techaiinnovator.com">example@techaiinnovator.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/1234567890" target="_blank">Message Me</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TechAI Innovator. All rights reserved.</p>
+    </footer>
+</body>
+</html>

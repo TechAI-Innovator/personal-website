@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechAI Innovator - Professional AI Services</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/TechAI_Innovator_Logo1.png') }}">
+
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#3b82f6", secondary: "#10b981" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      }
+      @keyframes sectionHighlight {
+      0% { background-color: transparent; }
+      50% { background-color: rgba(59, 130, 246, 0.1); }
+      100% { background-color: transparent; }
+      }
+      .section-highlight {
+      animation: sectionHighlight 1s ease-out forwards;
+      }
+      .video-container::-webkit-scrollbar {
+      height: 6px;
+      }
+      .video-container::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+      }
+      .video-container::-webkit-scrollbar-thumb {
+      background: #c5c5c5;
+      border-radius: 10px;
+      }
+      .video-container::-webkit-scrollbar-thumb:hover {
+      background: #a0a0a0;
+      }
+      .custom-shadow {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+      .hero-section {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.7) 70%, rgba(255, 255, 255, 0.5) 100%), url('https://readdy.ai/api/search-image?query=A%20modern%20tech%20workspace%20with%20futuristic%20elements%2C%20holographic%20displays%20showing%20AI%20algorithms%20and%20data%20visualizations.%20The%20scene%20has%20a%20clean%2C%20minimalist%20aesthetic%20with%20soft%20blue%20lighting.%20The%20left%20side%20has%20a%20clean%20white%20space%20for%20text%2C%20while%20the%20right%20side%20shows%20advanced%20technology.%20Professional%20high-quality%20photography%20with%20depth%20of%20field.&width=1600&height=800&seq=hero123&orientation=landscape');
+      background-size: cover;
+      background-position: center right;
+      }
+      input:focus, textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+      }
+      .service-card:hover {
+      transform: translateY(-5px);
+      }
+      .scroll-arrow {
+      opacity: 0.7;
+      transition: opacity 0.3s;
+      }
+      .scroll-arrow:hover {
+      opacity: 1;
+      }
+      .video-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+      .play-button {
+      transition: transform 0.2s, background-color 0.2s;
+      }
+      .play-button:hover {
+      transform: scale(1.1);
+      background-color: rgba(59, 130, 246, 0.9);
+      }
+
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .animate-fadeDown {
+        animation: fadeDown 0.8s ease-out forwards;
+      }
+      .animate-zoomIn {
+        animation: zoomIn 0.6s ease-out forwards;
+      }
+      .nav-link {
+        opacity: 0;
+        transform: translateY(-10px);
+        animation: fadeDown 0.6s ease-out forwards;
+      }
+      .nav-link:nth-child(1) { animation-delay: 0.3s; }
+      .nav-link:nth-child(2) { animation-delay: 0.45s; }
+      .nav-link:nth-child(3) { animation-delay: 0.6s; }
+
+      .social-link {
+        transition: transform 0.3s;
+      }
+      .social-link:hover {
+        transform: scale(1.15);
+      }
+      .mobile-link {
+        transition: transform 0.3s ease;
+      }
+      .mobile-link:hover {
+        transform: translateX(5px);
+      }
+
+      .nav-link,
+      .mobile-link,
+      a[href="/admin"] {
+        position: relative;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .nav-link:hover,
+      .mobile-link:hover,
+      a[href="/admin"]:hover {
+        color: #3b82f6; /* Tailwind's primary color (blue-500) */
+        transform: translateY(-2px);
+      }
+
+      /* Optional underline effect on hover */
+      .nav-link::after,
+      .mobile-link::after,
+      a[href="/admin"]::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        height: 2px;
+        width: 0%;
+        background-color: #3b82f6;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after,
+      .mobile-link:hover::after,
+      a[href="/admin"]:hover::after {
+        width: 100%;
+      }
+
+      .social-link {
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+      .social-link:hover {
+        transform: scale(1.2);
+        color: #3b82f6;
+      }
+
+      /* BUTTON HOVER ANIMATIONS */
+    .hero-section button {
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .hero-section button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    /* SPECIFIC COLOR TWEAKS IF YOU WANT MORE POP */
+    .hero-section .bg-primary:hover {
+      background-color: #2563eb; /* Slightly deeper blue */
+    }
+
+    .hero-section .border-primary:hover {
+      background-color: #f9fafb; /* Very light gray */
+      color: #2563eb;
+      border-color: #2563eb;
+    }
+
+    /* OPTIONAL: ENTRANCE ANIMATIONS */
+    .hero-section h1,
+    .hero-section p,
+    .hero-section button {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 0.8s ease forwards;
+    }
+
+    .hero-section h1 {
+      animation-delay: 0.1s;
+    }
+    .hero-section p {
+      animation-delay: 0.3s;
+    }
+    .hero-section button:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    .hero-section button:nth-child(2) {
+      animation-delay: 0.7s;
+    }
+
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* VIDEO CARD HOVER EFFECTS */
+.video-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  z-index: 1;
+}
+
+/* PLAY BUTTON HOVER EFFECT */
+.play-button {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5); /* glow with your primary color */
+}
+
+/* OPTIONAL: FADE-IN ANIMATIONS FOR SECTION ENTRANCE */
+#about h2,
+#about p,
+#about .video-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+#about h2 {
+  animation-delay: 0.1s;
+}
+#about p {
+  animation-delay: 0.3s;
+}
+#about .video-card:nth-child(1) {
+  animation-delay: 0.5s;
+}
+#about .video-card:nth-child(2) {
+  animation-delay: 0.6s;
+}
+#about .video-card:nth-child(3) {
+  animation-delay: 0.7s;
+}
+#about .video-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+#about .video-card:nth-child(5) {
+  animation-delay: 0.9s;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SERVICE CARD HOVER STYLES */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(59, 130, 246, 0.3); /* subtle primary border on hover */
+}
+
+/* ICON ANIMATION ON CARD HOVER */
+.service-card:hover i {
+  transform: rotate(5deg) scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* OPTIONAL: REVEAL ANIMATION */
+#services h2,
+#services .service-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+#services h2 {
+  animation-delay: 0.2s;
+}
+
+#services .service-card:nth-child(1) {
+  animation-delay: 0.3s;
+}
+#services .service-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+#services .service-card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+#services .service-card:nth-child(4) {
+  animation-delay: 0.6s;
+}
+#services .service-card:nth-child(5) {
+  animation-delay: 0.7s;
+}
+#services .service-card:nth-child(6) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Hover background handled by Tailwind hover:bg-blue-50 */
+
+/* Title typewriter - single line */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typewriter-title {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #3b82f6; /* blue-500 */
+  display: inline-block;
+  animation:
+    typewriter 2s steps(30, end) forwards,
+    blink 0.7s step-end infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}
+
+/* Description fade-in (multi-line) */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-text {
+  opacity: 0;
+  animation: fadeInText 1.5s ease forwards;
+  animation-delay: 2.2s; /* start after title animation */
+}
+
+/* Link text fade-in */
+.fade-in-link {
+  opacity: 0;
+  animation: fadeInText 1.5s ease forwards;
+  animation-delay: 3.5s;
+}
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-up {
+  animation: fadeSlideUp 1.2s ease-out forwards;
+}
+
+    </style>
+  </head>
+
+  
+  <body class="bg-gray-50">
+
+    <!-- Header & Navigation -->
+    <header class="w-full bg-gradient-to-r from-white via-blue-50 to-white shadow-sm sticky top-0 z-50" >
+      <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <div class="w-20 h-20 flex items-center justify-center bg-primary rounded-full overflow-hidden animate-zoomIn">
+            <img src="{{ url_for('static', filename='images/TechAI_Innovator_Logo.png') }}" alt="Logo" class="w-full h-full object-cover scale-150" />
+          </div>
+          <span class="font-['Pacifico'] text-xl text-gray-800">TechAI <br> Innovator</span>
+        </div>
+
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <div class="hidden md:flex items-center space-x-3">
+            <a href="https://linkedin.com/in/techai-innovator" target="_blank" class="social-link">
+              <i class="ri-linkedin-fill ri-lg"></i>
+            </a>
+            <a href="https://github.com/techai-innovator" target="_blank" class="social-link">
+              <i class="ri-github-fill ri-lg"></i>
+            </a>
+          </div>
+          <a href="/admin" class="text-sm text-gray-700 hover:text-primary transition-colors flex items-center space-x-1">
+            <i class="ri-user-line"></i>
+            <span>Admin</span>
+          </a>
+          <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+            <i class="ri-menu-line ri-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 py-3">
+        <div class="container mx-auto px-4 flex flex-col space-y-3">
+          <a href="#about" class="mobile-link">About</a>
+          <a href="#services" class="mobile-link">Services</a>
+          <a href="#contact" class="mobile-link">Contact</a>
+          <div class="flex items-center space-x-4 pt-2">
+            <a href="https://linkedin.com/in/techai-innovator" target="_blank" class="social-link">
+              <i class="ri-linkedin-fill ri-lg"></i>
+            </a>
+            <a href="https://github.com/techai-innovator" target="_blank" class="social-link">
+              <i class="ri-github-fill ri-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+    <main
+      class="container mx-auto px-4 md:px-6 py-8 border border-gray-200 rounded-lg my-8 bg-white"
+    >
+
+
+      <!-- Hero Section -->
+      <section class="hero-section rounded-lg overflow-hidden mb-16" data-aos="fade-left">
+        <div
+          class="w-full flex flex-col md:flex-row items-center py-16 md:py-24"
+        >
+          <div class="w-full md:w-1/2 px-6 md:px-12">
+            <h1
+              class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            >
+              Innovative AI Solutions for Your Business
+            </h1>
+            <p class="text-lg text-gray-700 mb-8">
+              Transforming ideas into intelligent solutions. Leveraging
+              cutting-edge AI technology to solve complex problems and drive
+              business growth.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4"
+            >
+              <button
+                class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 transition-colors shadow-md whitespace-nowrap"
+              >
+                Explore Services
+              </button>
+              <button
+                class="bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap"
+              >
+                Contact Me
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- About Me Section -->
+      <section id="about" class="mb-16" data-aos="fade-left">
+        <div class="mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            About Me
+          </h2>
+          <p class="text-gray-700 max-w-3xl">
+            With over 10 years of experience in AI and machine learning, I
+            specialize in creating innovative solutions that help businesses
+            leverage the power of artificial intelligence. My approach combines
+            technical expertise with a deep understanding of business needs.
+          </p>
+        </div>
+        <div class="relative">
+
+          <!-- Left Scroll Arrow -->
+          <button
+            class="scroll-arrow absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow-lg w-10 h-10 flex items-center justify-center"
+            id="scroll-left"
+          >
+            <i class="ri-arrow-left-s-line ri-lg text-gray-700"></i>
+          </button>
+
+          <!-- Video Container -->
+          <div
+            class="video-container relative overflow-x-auto flex space-x-5 py-4 px-2 scroll-smooth"
+            id="video-container"
+          >
+            <!-- Video Card 1 -->
+            <div
+              class="video-card flex-shrink-0 w-72 bg-white rounded-lg overflow-hidden custom-shadow data"
+            >
+              <div class="relative">
+                <div
+                  class="bg-gray-200 h-40 w-full"
+                  style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20male%20tech%20expert%20explaining%20AI%20concepts%20in%20a%20modern%20studio%20with%20blue%20lighting%20and%20digital%20displays.%20High-quality%20video%20frame%20capture%20showing%20clear%20facial%20expressions%20and%20professional%20attire.%20Clean%20background%20with%20subtle%20tech%20elements.&width=400&height=225&seq=video1&orientation=landscape'); background-size: cover; background-position: center;"
+                ></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <button
+                    class="play-button w-12 h-12 bg-primary bg-opacity-90 rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-play-fill ri-lg text-white"></i>
+                  </button>
+                </div>
+                <span
+                  class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded"
+                  >4:32</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-1 typewriter-title">
+                  My Journey in AI Development
+                </h3>
+                <p class="text-sm text-gray-600">
+                  An introduction to my background and experience in artificial
+                  intelligence and machine learning.
+                </p>
+              </div>
+            </div>
+            <!-- Video Card 2 -->
+            <div
+              class="video-card flex-shrink-0 w-72 bg-white rounded-lg overflow-hidden custom-shadow"
+            >
+              <div class="relative">
+                <div
+                  class="bg-gray-200 h-40 w-full"
+                  style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20tech%20expert%20demonstrating%20machine%20learning%20algorithms%20on%20a%20digital%20screen%20in%20a%20modern%20office%20environment.%20High-quality%20video%20frame%20showing%20clear%20visualization%20of%20data%20and%20AI%20models.%20Clean%20professional%20setting%20with%20subtle%20tech%20elements.&width=400&height=225&seq=video2&orientation=landscape'); background-size: cover; background-position: center;"
+                ></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <button
+                    class="play-button w-12 h-12 bg-primary bg-opacity-90 rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-play-fill ri-lg text-white"></i>
+                  </button>
+                </div>
+                <span
+                  class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded"
+                  >6:15</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-1 typewriter-title" >
+                  My Approach to Problem Solving
+                </h3>
+                <p class="text-sm text-gray-600">
+                  How I tackle complex technical challenges and develop
+                  innovative solutions for clients.
+                </p>
+              </div>
+            </div>
+            <!-- Video Card 3 -->
+            <div
+              class="video-card flex-shrink-0 w-72 bg-white rounded-lg overflow-hidden custom-shadow"
+            >
+              <div class="relative">
+                <div
+                  class="bg-gray-200 h-40 w-full"
+                  style="background-image: url('https://readdy.ai/api/search-image?query=Tech%20professional%20explaining%20data%20science%20concepts%20with%20digital%20visualization%20in%20background.%20High-quality%20video%20frame%20showing%20engaging%20presentation%20style%20in%20a%20modern%20tech%20environment.%20Clean%20professional%20setting%20with%20subtle%20tech%20elements%20and%20blue%20accent%20lighting.&width=400&height=225&seq=video3&orientation=landscape'); background-size: cover; background-position: center;"
+                ></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <button
+                    class="play-button w-12 h-12 bg-primary bg-opacity-90 rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-play-fill ri-lg text-white"></i>
+                  </button>
+                </div>
+                <span
+                  class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded"
+                  >5:48</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-1 typewriter-title" >
+                  The Future of AI Technology
+                </h3>
+                <p class="text-sm text-gray-600">
+                  My vision for how artificial intelligence will transform
+                  industries in the coming years.
+                </p>
+              </div>
+            </div>
+            <!-- Video Card 4 -->
+            <div
+              class="video-card flex-shrink-0 w-72 bg-white rounded-lg overflow-hidden custom-shadow"
+            >
+              <div class="relative">
+                <div
+                  class="bg-gray-200 h-40 w-full"
+                  style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20tech%20expert%20demonstrating%20a%20successful%20AI%20project%20implementation%20with%20client%20testimonial.%20High-quality%20video%20frame%20showing%20both%20the%20presenter%20and%20project%20results%20on%20screen.%20Modern%20office%20setting%20with%20professional%20lighting.&width=400&height=225&seq=video4&orientation=landscape'); background-size: cover; background-position: center;"
+                ></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <button
+                    class="play-button w-12 h-12 bg-primary bg-opacity-90 rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-play-fill ri-lg text-white"></i>
+                  </button>
+                </div>
+                <span
+                  class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded"
+                  >7:22</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-1 typewriter-title" >
+                  Client Success Stories
+                </h3>
+                <p class="text-sm text-gray-600">
+                  Real-world examples of how my AI solutions have helped
+                  businesses achieve their goals.
+                </p>
+              </div>
+            </div>
+            <!-- Video Card 5 -->
+            <div
+              class="video-card flex-shrink-0 w-72 bg-white rounded-lg overflow-hidden custom-shadow"
+            >
+              <div class="relative">
+                <div
+                  class="bg-gray-200 h-40 w-full"
+                  style="background-image: url('https://readdy.ai/api/search-image?query=Tech%20professional%20giving%20a%20workshop%20on%20advanced%20AI%20techniques%20to%20a%20small%20audience.%20High-quality%20video%20frame%20showing%20engaging%20teaching%20style%20with%20digital%20presentation.%20Modern%20tech%20training%20environment%20with%20professional%20equipment.&width=400&height=225&seq=video5&orientation=landscape'); background-size: cover; background-position: center;"
+                ></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <button
+                    class="play-button w-12 h-12 bg-primary bg-opacity-90 rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-play-fill ri-lg text-white"></i>
+                  </button>
+                </div>
+                <span
+                  class="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded"
+                  >8:05</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-gray-900 mb-1 typewriter-title" >
+                  My Teaching Philosophy
+                </h3>
+                <p class="text-sm text-gray-600">
+                  How I approach knowledge sharing and mentoring in the field of
+                  artificial intelligence.
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Right Scroll Arrow -->
+          <button
+            class="scroll-arrow absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow-lg w-10 h-10 flex items-center justify-center"
+            id="scroll-right"
+          >
+            <i class="ri-arrow-right-s-line ri-lg text-gray-700"></i>
+          </button>
+
+
+          <!-- Scroll Progress Indicator -->
+          <div
+            class="w-full mt-4 bg-gray-200 rounded-full h-1.5 overflow-hidden"
+          >
+            <div
+              class="bg-primary h-full rounded-full w-0"
+              id="scroll-progress"
+            ></div>
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+      <!-- Services Section -->
+      <section id="services" class="mb-16" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+          My Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {% for service in services %}
+          <div
+            class="service-card group bg-white rounded-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:bg-blue-50 hover:shadow-xl hover:border-blue-200"
+          >
+            <div class="p-6">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+              >
+                <i class="ri-robot-line ri-lg text-primary transition-transform duration-300"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2 typewriter-title">
+                {{ service[1] }}
+              </h3>
+              <p class="text-gray-700 mb-4 fade-in-text">
+                {{ service[2] }}
+              </p>
+              <a
+                href="/services-{{ service[0] }}"
+                class="inline-flex items-center text-primary font-medium hover:underline fade-in-link"
+              >
+                <span>View Projects</span>
+                <i class="ri-arrow-right-line ml-1"></i>
+              </a>
+
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+
+
+
+
+      <!-- Contact Section -->
+      <section id="contact" class="mb-8" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 animate-fade-in-up">
+          Get in Touch
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Left Column: Contact Info -->
+          <div data-aos="fade-right">
+            <div>
+              <div class="bg-white rounded-lg p-6 custom-shadow hover:shadow-xl transition-shadow duration-300">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                  Contact Information
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-start space-x-3">
+                    <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-primary flex-shrink-0">
+                      <i class="ri-phone-line ri-lg"></i>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-500 mb-1">Phone</p>
+                      <p class="text-gray-800 font-medium">+234 703 572 8085</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full text-green-600 flex-shrink-0">
+                      <i class="ri-whatsapp-line ri-lg"></i>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-500 mb-1">WhatsApp</p>
+                      <p class="text-gray-800 font-medium">+234 806 566 9063</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <div class="w-10 h-10 flex items-center justify-center bg-red-100 rounded-full text-red-600 flex-shrink-0">
+                      <i class="ri-mail-line ri-lg"></i>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-500 mb-1">Email</p>
+                      <p class="text-gray-800 font-medium">contact@techai-innovator.com</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <div class="w-10 h-10 flex items-center justify-center bg-purple-100 rounded-full text-purple-600 flex-shrink-0">
+                      <i class="ri-map-pin-line ri-lg"></i>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-500 mb-1">Location</p>
+                      <p class="text-gray-800 font-medium">Ibadan, Oyo State, Nigeria</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-6">
+                  <h4 class="text-gray-900 font-medium mb-3">Connect with me</h4>
+                  <div class="flex space-x-3">
+                    <a href="https://linkedin.com/in/techai-innovator" target="_blank" class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-blue-700 hover:bg-blue-200 transition-colors">
+                      <i class="ri-linkedin-fill ri-lg"></i>
+                    </a>
+                    <a href="https://github.com/techai-innovator" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full text-gray-800 hover:bg-gray-200 transition-colors">
+                      <i class="ri-github-fill ri-lg"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-blue-400 hover:bg-blue-200 transition-colors">
+                      <i class="ri-twitter-fill ri-lg"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Contact Form -->
+          <div data-aos="fade-left">
+            <form class="bg-white rounded-lg p-6 custom-shadow">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                Send a Message
+              </h3>
+              <div class="space-y-4">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 
+                          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 
+                          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+                <div>
+                  <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 
+                          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                    placeholder="How can I help you?"
+                  />
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded text-gray-900 
+                          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                    placeholder="Your message here..."
+                  ></textarea>
+                </div>
+                <div class="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+                  />
+                  <label for="consent" class="ml-2 block text-sm text-gray-700">
+                    I agree to the privacy policy and terms of service.
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-600 hover:scale-105 active:scale-95 transition-transform transition-colors shadow-md"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12" data-aos="fade-up">
+
+      <div class="container mx-auto px-4 md:px-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+
+          <div>
+            <div class="flex items-center space-x-3">
+              <div class="w-20 h-20 flex items-center justify-center bg-primary rounded-full overflow-hidden">
+                <img src="{{ url_for('static', filename='images/TechAI_Innovator_Logo.png') }}" alt="Logo" class="w-full h-full object-cover scale-150 " />
+              </div>
+              <span class="font-['Pacifico'] text-xl">TechAI Innovator</span>
+            </div>
+            <p class="text-gray-400 mb-4">
+              Transforming ideas into intelligent solutions with cutting-edge AI
+              technology.
+            </p>
+            <div class="flex space-x-3">
+              <a
+                href="https://linkedin.com/in/techai-innovator"
+                target="_blank"
+                class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+              >
+                <i class="ri-linkedin-fill ri-lg"></i>
+              </a>
+              <a
+                href="https://github.com/techai-innovator"
+                target="_blank"
+                class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+              >
+                <i class="ri-github-fill ri-lg"></i>
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+              >
+                <i class="ri-twitter-fill ri-lg"></i>
+              </a>
+            </div>
+          </div>
+
+
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/admin"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Admin Login</a
+                >
+              </li>
+            </ul>
+          </div>
+
+
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Services</h3>
+            <ul class="space-y-2">
+              {% for service in services %}
+              <li>
+                <a
+                  href="/services/{{ service[0]}}"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >{{ service[1] }}</a
+                >
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3">
+                <i class="ri-map-pin-line text-gray-400 mt-1"></i>
+                <span class="text-gray-400"
+                  >Ibadan, Oyo State, Nigeria</span
+                >
+              </li>
+              <li class="flex items-start space-x-3">
+                <i class="ri-mail-line text-gray-400 mt-1"></i>
+                <span class="text-gray-400">contact@techai-innovator.com</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i class="ri-phone-line text-gray-400 mt-1"></i>
+                <span class="text-gray-400">+234 703 572 8085</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        
+        <div
+          class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 TechAI Innovator. All rights reserved.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="/privacy-policy"
+              class="text-gray-400 hover:text-white text-sm transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="/terms-of-service"
+              class="text-gray-400 hover:text-white text-sm transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+
+      </div>
+
+    </footer>
+
+
+
+
+
+    <!-- Scroll to top button -->
+    <button
+      id="scroll-to-top"
+      class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300"
+    >
+      <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+
+
+
+
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      });
+    </script>
+
+    <script id="video-scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("video-container");
+        const scrollLeftBtn = document.getElementById("scroll-left");
+        const scrollRightBtn = document.getElementById("scroll-right");
+        const progressBar = document.getElementById("scroll-progress");
+        // Scroll buttons functionality
+        scrollLeftBtn.addEventListener("click", function () {
+          container.scrollBy({ left: -300, behavior: "smooth" });
+        });
+        scrollRightBtn.addEventListener("click", function () {
+          container.scrollBy({ left: 300, behavior: "smooth" });
+        });
+        // Update progress bar
+        function updateProgressBar() {
+          const scrollWidth = container.scrollWidth - container.clientWidth;
+          const scrolled = container.scrollLeft;
+          const progress = (scrolled / scrollWidth) * 100;
+          progressBar.style.width = `${progress}%`;
+        }
+        container.addEventListener("scroll", updateProgressBar);
+        // Initial update
+        updateProgressBar();
+        // Mouse wheel horizontal scrolling
+        container.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.deltaY !== 0) {
+              e.preventDefault();
+              container.scrollLeft += e.deltaY;
+              updateProgressBar();
+            }
+          },
+          { passive: false },
+        );
+      });
+    </script>
+    <script id="scroll-to-top-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const scrollToTopButton = document.getElementById("scroll-to-top");
+        // Show/hide button based on scroll position
+        window.addEventListener("scroll", function () {
+          if (window.pageYOffset > 300) {
+            scrollToTopButton.classList.remove("opacity-0", "invisible");
+            scrollToTopButton.classList.add("opacity-100", "visible");
+          } else {
+            scrollToTopButton.classList.remove("opacity-100", "visible");
+            scrollToTopButton.classList.add("opacity-0", "invisible");
+          }
+        });
+        // Scroll to top when button is clicked
+        scrollToTopButton.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+    <script id="smooth-scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+              });
+              // Add highlight effect after scrolling
+              const handleScrollEnd = () => {
+                targetElement.classList.add("section-highlight");
+                setTimeout(() => {
+                  targetElement.classList.remove("section-highlight");
+                }, 1000);
+              };
+              // Use requestAnimationFrame to detect when scrolling stops
+              let lastScrollTop = window.pageYOffset;
+              const checkScrollStop = () => {
+                const currentScrollTop = window.pageYOffset;
+                if (currentScrollTop === lastScrollTop) {
+                  handleScrollEnd();
+                  return;
+                }
+                lastScrollTop = currentScrollTop;
+                requestAnimationFrame(checkScrollStop);
+              };
+              requestAnimationFrame(checkScrollStop);
+            }
+          });
+        });
+      });
+    </script>
+    <script>
+      document.querySelectorAll('.typewriter').forEach(el => {
+        const text = el.getAttribute('data-text');
+        let i = 0;
+        const interval = setInterval(() => {
+          if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+          } else {
+            clearInterval(interval);
+          }
+        }, 50);
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 800,
+    once: false,
+    offset: 100,     // how far before the element enters viewport to trigger
+    easing: 'ease-in-out',
+    delay: 100
+  });
+</script>
+
+  </body>
+</html>

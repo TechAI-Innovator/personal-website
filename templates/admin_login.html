@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Admin Login</title>
+	<link rel='stylesheet' href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="login">
+	{% if register == "Register" %}
+	<div class="container">
+		<h2>Admin Register</h2>
+		<form method = "POST" action='/admin/register'>
+			<label>username</label>
+			<input type='text' name='username' class='admin_login' id='admin_login' required>
+			<label>password</label>
+			<input type='password' name='password' required>
+			<button type='submit'>Register</button>
+		</form>
+	</div>
+
+	{% else %}
+
+	<div class="container">
+		<h2>Admin Login</h2>
+		<form method = "POST" action='/admin'>
+			<label>username</label>
+			<input type='text' name='username' class='admin_login' id='admin_login' required>
+			<label>password</label>
+			<input type='password' name='password' required>
+			<button type='submit'>Login</button>
+			<p>Click <a href="/admin/register">here</a> to register</p>
+		</form>
+	</div>
+	{% endif %}
+
+</body>
+</html>
